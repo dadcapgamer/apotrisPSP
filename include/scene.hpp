@@ -12,6 +12,17 @@
 #include <string>
 #include <tuple>
 
+// The hold shortcut reads the physical face buttons rather than the rebindable
+// game keys, so its name has to follow the platform's button names. The label
+// doubles as the lookup key in getDescription(), so both live here.
+#ifdef PSP
+#define AB_HOLD_LABEL "Cross+Circle to Hold"
+#define AB_HOLD_DESCRIPTION "Hold when pressing Cross and Circle."
+#else
+#define AB_HOLD_LABEL "A+B to Hold"
+#define AB_HOLD_DESCRIPTION "Hold when pressing A and B."
+#endif
+
 extern int previousSelection;
 
 extern void sceneSwitcher(std::string str);
@@ -211,7 +222,7 @@ public:
         std::list<std::string> l = gameOptions;
 
 #if defined(PC) || defined(WEB) || defined(PORTMASTER) || defined(SWITCH) ||   \
-    defined(N3DS)
+    defined(N3DS) || defined(PSP)
         l.remove("2P Battle");
 #endif
 

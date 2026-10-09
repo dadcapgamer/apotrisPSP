@@ -3,6 +3,7 @@
 #include <list>
 
 #define PLATFORM_N3DS 6
+#define PLATFORM_PSP 7
 
 #ifdef GBA
 
@@ -57,6 +58,13 @@
 
 #define PLATFORM PLATFORM_N3DS
 #include "liba_n3ds.h"
+
+#endif
+
+#ifdef PSP
+
+#define PLATFORM PLATFORM_PSP
+#include "liba_psp.h"
 
 #endif
 

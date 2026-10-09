@@ -1239,7 +1239,7 @@ std::string getStringFromKey(int key) {
         return "?";
     }
 
-#elif defined(SWITCH) || defined(MM) || defined(PORTMASTER)
+#elif defined(SWITCH) || defined(MM) || defined(PORTMASTER) || defined(PSP)
 
     return keyToString[key];
 

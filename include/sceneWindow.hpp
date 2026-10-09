@@ -357,7 +357,10 @@ public:
         list.push_back(new ScaleSelectElement(n3ds::ScaleMode::SCALED_SHARP));
         list.push_back(new ScaleSelectElement(n3ds::ScaleMode::SCALED_ULTRA));
         list.push_back(new LabelElement("Diagnostics:"));
-#else
+#elif !defined(PSP)
+        // PSP draws a fixed 408x272 pillarbox, so there is nothing to scale:
+        // settings.zoom and settings.integerScale are read only by the
+        // windowed backends, and refreshWindowSize() is a no-op there.
         list.push_back(new IntegerScaleElement());
         list.push_back(new ScaleElement());
 #endif

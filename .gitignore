@@ -20,3 +20,11 @@ dkarm.ini
 .AppleDouble
 .LSOverride
 ._*
+
+# PSP port build output
+*.o
+__pycache__/
+EBOOT.PBP
+PARAM.SFO
+psp-package/
+*.d

@@ -4,7 +4,7 @@
 
 class ABHoldElement : public Element {
 public:
-    std::string getLabel() override { return "A+B to Hold"; }
+    std::string getLabel() override { return AB_HOLD_LABEL; }
 
     std::string getCursor(std::string text) override {
         return "[" + text + "]";
@@ -358,6 +358,8 @@ public:
         list.push_back(new ABHoldElement());
         list.push_back(new QuickResetElement());
 
+// PSP is deliberately absent: it has no rumble motor, and the platform's
+// rumble entry points are stubs.
 #if defined(GBA) || defined(SWITCH) || defined(MM) || defined(PORTMASTER) ||   \
     defined(PC)
         list.push_back(new RumbleElement());

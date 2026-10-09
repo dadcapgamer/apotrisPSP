@@ -67,8 +67,8 @@ std::string getDescription(std::string element) {
 
         // CONTROL
         // -------------------------------------------------------------------------------
-    } else if (element == "A+B to Hold") {
-        return "Hold when pressing A and B.";
+    } else if (element == AB_HOLD_LABEL) {
+        return AB_HOLD_DESCRIPTION;
 
     } else if (element == "Quick Restart") {
         return "Press/Hold L and R to restart the game.";

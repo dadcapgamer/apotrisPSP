@@ -1,5 +1,9 @@
 # Apotris
 
+> **This is the PSP port of Apotris 4.1.0.** See [PSP_PORT.md](PSP_PORT.md)
+> for building, installing and port notes. Everything below is the upstream
+> README.
+
 <https://apotris.com>
 
 You can find builds/releases at https://apotris.com/downloads

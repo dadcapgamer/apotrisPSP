@@ -128,6 +128,18 @@ void platformInit() {
 }
 
 void deinitialize() {
+#ifdef PSP
+    // Skip the teardown entirely on PSP. It double-frees: all three tilesets
+    // are created with palettes[0] and CreateBaseObject() marks every object
+    // as its own owner, so TLN_DeleteTileset() releases palettes[0] once per
+    // tileset and the palette loop below frees it again. On PC the allocator
+    // absorbs it; on PSP it corrupts the heap and faults inside free(), which
+    // powers the console off instead of returning to the XMB. The module is
+    // about to exit and the kernel reclaims everything anyway.
+    pspAudioShutdown();
+    return;
+#endif
+
     TLN_Deinit();
 
     for (int i = 1; i < 4; i++)

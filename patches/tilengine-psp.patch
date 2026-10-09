@@ -1,0 +1,49 @@
+diff --git a/src/ObjectList.c b/src/ObjectList.c
+index ebeb798..6132a0a 100644
+--- a/src/ObjectList.c
++++ b/src/ObjectList.c
+@@ -26,6 +26,7 @@ typedef enum
+ }
+ Property;
+ 
++#ifndef PSP /* PSP port: no filesystem asset loading; see PSP_PORT.md */
+ /* load manager */
+ struct
+ {
+@@ -36,10 +37,12 @@ struct
+ 	Property property;			/* current property */
+ }
+ static loader;
++#endif /* !PSP */
+ 
+ static bool CloneObjectToList(TLN_ObjectList list, TLN_Object* data);
+ 
+ /* XML parser callback */
++#ifndef PSP /* PSP port: no filesystem asset loading; see PSP_PORT.md */
+ static void* handler(SimpleXmlParser parser, SimpleXmlEvent evt,
+ 	const char* szName, const char* szAttribute, const char* szValue)
+ {
+@@ -150,6 +153,7 @@ static bool intersetcs(rect_t* rect1, rect_t* rect2)
+ {
+ 	return !(rect1->x2 < rect2->x1 || rect1->x1 > rect2->x2 || rect1->y2 < rect2->y1 || rect1->y1 > rect2->y2);
+ }
++#endif /* !PSP */
+ 
+ /*!
+  * \brief Creates a TLN_ObjectList
+@@ -234,6 +238,7 @@ bool TLN_AddTileObjectToList(TLN_ObjectList list, uint16_t id, uint16_t gid, uin
+ 	return true;
+ }
+ 
++#ifndef PSP /* PSP port: no filesystem asset loading; see PSP_PORT.md */
+ /*!
+  * \brief Loads an object list from a Tiled object layer
+  * 
+@@ -321,6 +326,7 @@ TLN_ObjectList TLN_LoadObjectList(const char* filename, const char* layername)
+ 	
+ 	return loader.objects;
+ }
++#endif /* !PSP */
+ 
+ /*!
+  * \brief Creates a duplicate of a given TLN_ObjectList object
