@@ -1,5 +1,0 @@
-[wrap-git]
-url = https://github.com/aronson/libutil
-revision = e8ac095
-[provide]
-dependency_names = libutil

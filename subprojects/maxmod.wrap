@@ -1,7 +1,0 @@
-[wrap-git]
-url = https://github.com/aronson/maxmod.git
-revision = master
-patch_directory = maxmod
-
-[provide]
-dependency_names = maxmod

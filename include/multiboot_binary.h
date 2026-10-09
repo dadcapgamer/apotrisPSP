@@ -1,6 +1,0 @@
-#ifndef APOTRIS_MULTIBOOT_BINARY_H
-#define APOTRIS_MULTIBOOT_BINARY_H
-
-#include "Multiboot.h"
-
-#endif // APOTRIS_MULTIBOOT_BINARY_H

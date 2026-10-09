@@ -1,30 +1,9 @@
-build*/
-bin/
-.cache/
-.vscode/
-.idea/
-*.gba
-*.elf
-*.sav
-*.srm
-*.pnproj
-*.el
-.clangd
-compile_commands.json
-apotris*.png
-
-dkarm.ini
-
-# Apple stuff
-.DS_Store
-.AppleDouble
-.LSOverride
-._*
-
-# PSP port build output
+build/
 *.o
-__pycache__/
+*.d
+*.elf
 EBOOT.PBP
 PARAM.SFO
 psp-package/
-*.d
+__pycache__/
+.DS_Store

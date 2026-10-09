@@ -1,1 +1,0 @@
-option('dkp_console', type: 'feature', value: 'auto', description: '(devkitARM) Enable text console API')
